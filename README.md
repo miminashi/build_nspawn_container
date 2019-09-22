@@ -2,13 +2,20 @@
 
 systemd-nsapwn向けに, アプリケーションを含んだ配布可能なrootfsを作成する
 
+## Debianで動かす
+
+```sh
+./setup_machine.sh
+./build.sh
+```
+
 ## macOSで動かす
 
 - Vagrantが必要
 - `./app` がサンプルのアプリケーション.
 
 ```sh
-./build.sh
+./build_on_mac.sh
 ```
 
 `./build`に`rootfs.tar.gz`ができるはず.
