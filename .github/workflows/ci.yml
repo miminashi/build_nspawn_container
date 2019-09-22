@@ -11,10 +11,9 @@ jobs:
     - uses: actions/checkout@master
     - name: Dockerコンテナのビルド
       run: docker build -t build .
+    - name: ビルドディレクトリの作成
+      run: mkdir -p /tmp/build
     - name: Dockerコンテナの実行
-      run: |
-        mkdir -p /tmp/build
-        docker run --privileged -v /tmp/build:/docker/build -t build
-        ls /tmp/build
+      run: docker run --privileged -v /tmp/build:/docker/build -t build
     - name: rootfs.tar.gz が作成されたか確認する
       run: test -f /tmp/build/rootfs.tar.gz
