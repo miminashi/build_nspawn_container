@@ -16,4 +16,4 @@ script_path="$(cd $(dirname $0); pwd)"
 
 mkdir -p "${script_path}/build" &&
 rm -rf "${script_path}/build/rootfs.tar.gz" &&
-${script_path}/create_debian_container.sh "${script_path}/build/rootfs.tar.gzz"
+${script_path}/create_debian_container.sh "${script_path}/build/rootfs.tar.gz
