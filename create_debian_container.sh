@@ -18,7 +18,7 @@ dst="$1"
 tmp=$(mktemp -d)
 printf 'tmp: %s\n' "${tmp}"
 
-sudo mmdebstrap --variant=apt --include='systemd,dbus' --dpkgopt='path-exclude=/usr/share/man/*' --dpkgopt='path-exclude=/usr/share/locale/*' --dpkgopt='path-exclude=/usr/share/doc/*' --dpkgopt='path-exclude=/var/lib/apt/lists/*debian*' --dpkgopt='path-exclude=/var/cache/apt/*.bin' stable "${tmp}/root"
+mmdebstrap --variant=apt --include='systemd,dbus' --dpkgopt='path-exclude=/usr/share/man/*' --dpkgopt='path-exclude=/usr/share/locale/*' --dpkgopt='path-exclude=/usr/share/doc/*' --dpkgopt='path-exclude=/var/lib/apt/lists/*debian*' --dpkgopt='path-exclude=/var/cache/apt/*.bin' stable "${tmp}/root"
 
 cp -r ./* "${tmp}/root/tmp/"
 chroot "${tmp}/root" '/tmp/setup.sh'
