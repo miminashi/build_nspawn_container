@@ -1,0 +1,12 @@
+[Unit]
+Description=Example service
+After=network.target auditd.service
+
+[Service]
+ExecStart=/opt/app/example/main.sh
+Restart=always
+RestartSec=10
+StartLimitBurst=0
+
+[Install]
+WantedBy=multi-user.target
