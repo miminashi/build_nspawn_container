@@ -10,7 +10,7 @@ jobs:
     steps:
     - uses: actions/checkout@master
     - name: ビルド環境のセットアップ
-      run: ./setup_machine.sh
+      run: sudo ./setup_machine.sh
     - name: rootfsのビルド
       run: ./build.sh
     - name: rootfs.tar.gz が作成されたか確認する
