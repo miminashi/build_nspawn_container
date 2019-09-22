@@ -1,7 +1,5 @@
 #!/bin/sh
 
-set -x
-
 CMDNAME=$(basename $0)
 error() {
   printf '\e[31m%s: エラー: %s\e[m\n' "${CMDNAME}" "${1}" 1>&2
@@ -30,3 +28,4 @@ ls | xargs -IXXX rm -rf XXX
 cd "${tmp}/root"
 tar -czf "${dst}" ./
 
+rm -rf "${tmp}"
