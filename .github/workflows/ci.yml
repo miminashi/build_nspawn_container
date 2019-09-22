@@ -15,5 +15,6 @@ jobs:
       run: |
         mkdir -p /tmp/build
         docker run --privileged -v /tmp/build:/docker/build -t build
+        ls /tmp/build
     - name: rootfs.tar.gz が作成されたか確認する
       run: test -f /tmp/build/rootfs.tar.gz
