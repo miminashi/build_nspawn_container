@@ -4,10 +4,10 @@ systemd-nsapwn向けに, アプリケーションを含んだ配布可能なroot
 
 ## macOSで動かす
 
-`./app` がサンプルのアプリケーション.
+- Vagrantが必要
+- `./app` がサンプルのアプリケーション.
 
 ```sh
-vagrant up
 ./build.sh
 ```
 
