@@ -9,9 +9,11 @@ jobs:
     
     steps:
     - uses: actions/checkout@master
-    - name: ビルド環境のセットアップ
-      run: sudo ./setup_machine.sh
-    - name: rootfsのビルド
-      run: ./build.sh
+    - name: Dockerコンテナのビルド
+      run: docker build -t build .
+    - name: Dockerコンテナの実行
+      run: |
+        mkdir -p /tmp/build
+        docker run --privileged -v /tmp/build:/docker/build -t build
     - name: rootfs.tar.gz が作成されたか確認する
-      run: test -f ./build/rootfs.tar.gz
+      run: test -f /tmp/build/rootfs.tar.gz
